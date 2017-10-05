@@ -1,22 +1,30 @@
 {
     "name": "diepxuan/wordpress",
     "description": "The easiest way to install the WordPress use Composer",
-    "license": "GPL-2.0+",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0",
+        "GPL-2.0+"
+    ],
     "version": "0.0.1",
     "keywords": [
         "wordpress",
         "blog",
         "cms"
     ],
+    "type": "composer-plugin",
     "authors": [{
         "name": "Tran Ngoc Duc",
         "email": "caothu91@gmail.com"
+    }, {
+        "name": "Tran Ngoc Duc",
+        "email": "ductn@diepxuan.com"
     }],
     "require": {
         "php": ">=5.2.4",
         "composer-plugin-api": "~1.0",
         "composer/installers": "~1.0",
-        "diepxuan/wordpress-core": "4.8.2"
+        "diepxuan/wordpress-core": "~4.8"
     },
     "require-dev": {},
     "repositories": [{
@@ -31,8 +39,125 @@
                 "reference": "4.8.2"
             }
         }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.8.1",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.8.1"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.8",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.8"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.6",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.6"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.5",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.5"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.4",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.4"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.3",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.3"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.2",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.2"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7.1",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7.1"
+            }
+        }
+    }, {
+        "type": "package",
+        "package": {
+            "name": "diepxuan/wordpress-core",
+            "type": "wordpress-core",
+            "version": "4.7",
+            "source": {
+                "url": "git@github.com:WordPress/WordPress.git",
+                "type": "git",
+                "reference": "4.7"
+            }
+        }
     }],
+    "autoload": {
+        "files": [
+            "bootstrap.php"
+        ],
+        "psr-4": {
+            "Diepxuan\\WordPress\\": ""
+        }
+    },
     "extra": {
+        "class": "Diepxuan\\WordPress\\Plugin\\WordPress",
         "installer-paths": {
             "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
             "app/plugins/{$name}/": ["type:wordpress-plugin"],

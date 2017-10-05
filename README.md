@@ -5,13 +5,14 @@ Composer for WordPress
 [![WordPress](https://img.shields.io/badge/WordPress-blue.svg)](https://github.com/WordPress/WordPress)
 [![PHP >= 5.2.4](https://img.shields.io/badge/PHP-%3E=5.2.4-blue.svg)](https://packagist.org/packages/diepxuan/wordpress)
 
-WordPress
+WordPress core
 --------------
 
-This extension help install WordPress by Composer
+- This extension help install WordPress by Composer
+- Add Composer and version for Wordpress
 
 
-Installation
+How to installation
 ------------
 
 The easiest way to install the extension is to use [Composer](https://getcomposer.org/)
