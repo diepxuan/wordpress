@@ -1,0 +1,2 @@
+# wordpress
+Composer for WordPress
