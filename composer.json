@@ -35,13 +35,7 @@
         }
     },
     "extra": {
-        "class": "Diepxuan\\WordPress\\Plugin\\WordPress",
-        "installer-paths": {
-            "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-            "app/plugins/{$name}/": ["type:wordpress-plugin"],
-            "app/themes/{$name}/": ["type:wordpress-theme"]
-        },
-        "wordpress-core-dir": "bin"
+        "class": "Diepxuan\\WordPress\\Plugin\\WordPress"
     },
     "config": {
         "use-include-path": true
