@@ -6,7 +6,7 @@
         "AFL-3.0",
         "GPL-2.0+"
     ],
-    "version": "0.0.3",
+    "version": "0.0.4",
     "keywords": [
         "wordpress",
         "blog",
@@ -41,7 +41,7 @@
             "app/plugins/{$name}/": ["type:wordpress-plugin"],
             "app/themes/{$name}/": ["type:wordpress-theme"]
         },
-        "wordpress-core-dir": "app/core"
+        "wordpress-core-dir": "bin"
     },
     "config": {
         "use-include-path": true
