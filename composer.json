@@ -6,11 +6,13 @@
         "AFL-3.0",
         "GPL-2.0+"
     ],
-    "version": "0.0.4.1",
+    "version": "0.0.5",
     "keywords": [
         "wordpress",
         "blog",
-        "cms"
+        "cms",
+        "muplugin",
+        "loader"
     ],
     "type": "composer-plugin",
     "authors": [{
