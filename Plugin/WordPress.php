@@ -6,14 +6,26 @@ class WordPress implements \Composer\Plugin\PluginInterface, \Composer\EventDisp
 {
 
     /**
-     * @param \Composer\Composer $composer
-     * @param \Composer\IO\IOInterface $io
+     * @var \Composer\Composer
+     */
+    protected $_extras;
+
+    /**
+     * @var \Composer\IO\IOInterface
+     */
+    protected $_config;
+
+    /**
+     * @param  \Composer\Composer       $composer
+     * @param  \Composer\IO\IOInterface $io
      * @return void
      */
     public function activate(
         \Composer\Composer       $composer,
         \Composer\IO\IOInterface $io
     ) {
+        $this->_extras = $composer->getPackage()->getExtra();
+        $this->_config = $composer->getConfig();
         /**
          * @var $installer \Diepxuan\WordPress\Setup\WordPress
          */
@@ -65,10 +77,10 @@ class WordPress implements \Composer\Plugin\PluginInterface, \Composer\EventDisp
     protected function getMuPluginDir()
     {
         $path = false;
-        if (empty($this->extras['installer-paths']) || !is_array($this->extras['installer-paths'])) {
+        if (empty($this->_extras['installer-paths']) || !is_array($this->_extras['installer-paths'])) {
             return false;
         }
-        foreach ($this->extras['installer-paths'] as $path => $types) {
+        foreach ($this->_extras['installer-paths'] as $path => $types) {
             if (!is_array($types)) {
                 continue;
             }
@@ -87,12 +99,12 @@ class WordPress implements \Composer\Plugin\PluginInterface, \Composer\EventDisp
      */
     protected function resolveMuPluginPath($relpath)
     {
-        if ($this->config->has('vendor-dir')) {
-            $tag = $this->config->raw()['config']['vendor-dir'];
+        if ($this->_config->has('vendor-dir')) {
+            $tag = $this->_config->raw()['config']['vendor-dir'];
         } else {
             $tag = '';
         }
-        $basepath = str_replace($tag, '', $this->config->get('vendor-dir'));
+        $basepath = str_replace($tag, '', $this->_config->get('vendor-dir'));
         return $basepath . $relpath;
     }
 }
